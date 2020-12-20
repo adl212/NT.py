@@ -17,3 +17,9 @@ NT.py is a package to help you get stats and access the nitrotype api
 - Has a ``Racer`` class to help you get racer stats
 - Has a ``Team`` class to help you get racer stats
 - Can use the whole nitrotype api!
+
+.. code-block:: python
+    :linenos:
+    import nitrotype
+    racer = Racer('adl212')
+    print(racer.username)
