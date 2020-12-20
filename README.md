@@ -10,4 +10,4 @@ import nitrotype
 racer = nitrotype.Racer('adl212')
 print(racer.username)
 ```
-You can see all the attributes [here]('#racer-attributes')
+You can see all the attributes [here](#racer-attributes)
