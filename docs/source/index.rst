@@ -10,11 +10,8 @@ Welcome to NT.py's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+NT.py is a package to help you get stats and access the nitrotype api
+**Features:**
+- Has a Racer class to help you get racer stats
+- Has a Team class to help you get racer stats
+- Can use the whole nitrotype api!
