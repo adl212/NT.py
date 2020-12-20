@@ -134,5 +134,50 @@ class Racer:
                 self.season_points = (self.season_races*(100+(self.season_speed/2))*self.season_accuracy/100)
             except:
                 pass
-            self.friend_reqs_allowed = ':white_check_mark: ' if newdata['allowFriendRequests'] == 1 else ':negative_squared_cross_mark:'
-            self.looking_for_team = ':white_check_mark: ' if newdata['lookingForTeam'] == 1 else ':negative_squared_cross_mark:'
+            self.friend_reqs_allowed = True if newdata['allowFriendRequests'] == 1 else False
+            self.looking_for_team = True if newdata['lookingForTeam'] == 1 else False
+class Team:
+    def __init__(self, team):
+        try:
+            self.data = loads(api_get(f'teams/{team}').content)
+            self.success = True
+            if self.data['success'] == False:
+                self.success = False
+                self.data = {}
+                return
+        except Exception:
+            self.data = {}
+        else:
+            self.data = self.data['data']
+            self.info = self.data["info"]
+
+            self.daily_pre = self.data['stats'][1]
+            self.daily_races = self.daily_pre['played']
+            self.daily_speed = int(self.daily_pre['typed'])/5/self.daily_pre['secs']*60
+            self.daily_accuracy = 100-((int(self.daily_pre['errs'])/int(self.daily_pre['typed']))*100)
+            self.daily_points = (self.daily_races*(100+(self.daily_speed/2))*self.daily_accuracy/100)
+
+            self.season_pre = self.data['stats'][2]
+            self.season_races = self.season_pre['played']
+            self.season_speed = int(self.season_pre['typed'])/5/self.season_pre['secs']*60
+            self.season_accuracy = 100-((int(self.season_pre['errs'])/int(self.season_pre['typed']))*100)
+            self.season_points = (self.season_races*(100+(self.season_speed/2))*self.season_accuracy/100)
+
+            self.alltime_pre = self.data['stats'][0]
+            self.alltime_races = self.alltime_pre['played']
+            self.alltime_speed = int(self.alltime_pre['typed'])/5/self.alltime_pre['secs']*60
+            self.alltime_accuracy = 100-((int(self.alltime_pre['errs'])/int(self.alltime_pre['typed']))*100)
+            self.alltime_points = (self.alltime_races*(100+(self.alltime_speed/2))*self.alltime_accuracy/100)
+
+            self.leaders = []
+            self.captain = (self.info['username'], self.info['displayName'])
+            for elem in self.data['members']:
+                if elem['role'] == "officer" and elem['username'] != self.captain[0]:
+                    self.leaders.append((elem['username'], elem['displayName']))
+            self.embed_title = self.info["displayName"]
+            if self.embed_title.endswith('s'):
+                self.embed_title += "'"
+            else:
+                self.embed_title += "'s"
+            self.embed_title += ' Team'
+            self.tag_and_name = f'[ [{self.info["tag"].upper()}] {self.info["name"]} ](https://www.nitrotype.com/team/{self.info["tag"].upper()})'
