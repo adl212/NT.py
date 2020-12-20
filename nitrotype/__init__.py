@@ -513,13 +513,12 @@ class Racer:
                 self.car = f'https://www.nitrotype.com/cars/{newdata["carID"]}_large_1.png'
             else:
                 self.car = f'https://www.nitrotype.com/cars/painted/{newdata["carID"]}_large_1_{newdata["carHueAngle"]}.png'
-            
             self.level = (newdata['level'])
             self.experience = (newdata['experience'])
             self.points = (newdata['achievementPoints'])
             self.country = countries.get(newdata['country'], 'Unknown')
             if self.country != 'Unknown':
-                self.country += f' :flag_{newdata["country"].lower()}: '
+                self.country += f'{newdata["country"].lower()}'
             self.views = (newdata['profileViews'])
             self.created = date.fromtimestamp(newdata['createdStamp']).strftime('%d %B %Y')
 
