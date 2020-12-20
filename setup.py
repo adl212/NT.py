@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="nitrotype.py",
-    version="0.0.1",
+    version="0.0.2",
     author="adl212",
     author_email="emailforpythoncoding@gmail.com",
-    description="a short description.",
+    description="A package to use the nitrotype api",
     long_description=long_description, # don't touch this, this is your README.md
     long_description_content_type="text/markdown",
-    url="The link to the github/repl/repository",
+    url="https://github.com/adl212/nitrotype.py",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
