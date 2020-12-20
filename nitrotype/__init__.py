@@ -633,10 +633,4 @@ class Team:
             for elem in self.data['members']:
                 if elem['role'] == "officer" and elem['username'] != self.captain[0]:
                     self.leaders.append((elem['username'], elem['displayName']))
-            self.embed_title = self.info["displayName"]
-            if self.embed_title.endswith('s'):
-                self.embed_title += "'"
-            else:
-                self.embed_title += "'s"
-            self.embed_title += ' Team'
             self.tag_and_name = f'[ [{self.info["tag"].upper()}] {self.info["name"]} ](https://www.nitrotype.com/team/{self.info["tag"].upper()})'
