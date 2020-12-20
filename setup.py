@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="NT.py",
-    version="1.0.0",
+    version="1.0.1",
     author="adl212",
     author_email="emailforpythoncoding@gmail.com",
-    description="A package to use the nitrotype api",
+    description="A package to use the nitrotype api and get player or team stats",
     long_description=long_description, # don't touch this, this is your README.md
     long_description_content_type="text/markdown",
     url="https://github.com/adl212/NT.py",
