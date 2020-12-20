@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
-Name: nitrotype.py
-Version: 0.0.3
+Name: NT.py
+Version: 0.0.1
 Summary: A package to use the nitrotype api
-Home-page: https://github.com/adl212/nitrotype.py
+Home-page: https://github.com/adl212/NT.py
 Author: adl212
 Author-email: emailforpythoncoding@gmail.com
 License: UNKNOWN

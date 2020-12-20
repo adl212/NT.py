@@ -1,8 +1,6 @@
 README.md
 setup.py
 nitrotype/__init__.py
-nitrotype/cars.py
-nitrotype/countries.py
 nitrotype/utils.py
 nitrotype.py.egg-info/PKG-INFO
 nitrotype.py.egg-info/SOURCES.txt
