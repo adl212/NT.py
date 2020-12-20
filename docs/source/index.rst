@@ -11,6 +11,7 @@ Welcome to NT.py's documentation!
    :caption: Contents:
 
 NT.py is a package to help you get stats and access the nitrotype api
+
 **Features:**
 - Has a Racer class to help you get racer stats
 - Has a Team class to help you get racer stats
