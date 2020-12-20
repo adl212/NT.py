@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="NT.py",
-    version="0.0.1",
+    version="1.0.0",
     author="adl212",
     author_email="emailforpythoncoding@gmail.com",
     description="A package to use the nitrotype api",

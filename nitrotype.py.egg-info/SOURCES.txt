@@ -1,8 +1,0 @@
-README.md
-setup.py
-nitrotype/__init__.py
-nitrotype/utils.py
-nitrotype.py.egg-info/PKG-INFO
-nitrotype.py.egg-info/SOURCES.txt
-nitrotype.py.egg-info/dependency_links.txt
-nitrotype.py.egg-info/top_level.txt

@@ -1,6 +1,6 @@
 from requests import get
 import re, json
-import date
+from datetime import date
 #cars of nitrotype
 cars = {
     1 : 'Lamborgotti Mephisto SS',
@@ -470,7 +470,7 @@ class Racer:
             return
 
         newdata = {}
-        newdata = json.loads('{'+re.search(r'RACER_INFO: \{\"(.*)\}', get(f'https://www.nitrotype.com/racer/{racer}').text.strip()).group()+'}')['RACER_INFO']
+        newdata = json.loads('{"'+re.search(r'RACER_INFO: \{\"(.*)\}', get(f'https://www.nitrotype.com/racer/{racer}').text.strip()).group(1)+'}')
         #print(newdata)
         if newdata == {}:
             self.success = False
