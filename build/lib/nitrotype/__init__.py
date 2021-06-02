@@ -1,9 +1,6 @@
 import re, json
 from datetime import date
 from .https import idk
-requests = idk()
-def get(*args, **kwargs):
-    return requests.get(headers=requests.headers, *args, **kwargs)
 #cars of nitrotype
 cars = {
     1 : 'Lamborgotti Mephisto SS',
@@ -468,6 +465,9 @@ countries = {
 
 class Racer:
     def __init__(self, racer=None):
+        self.requests = idk()
+        def get(*args, **kwargs):
+            return self.requests.get(headers=self.requests.headers, *args, **kwargs)
         if racer == None:
             self.success = False
             return
@@ -599,6 +599,9 @@ class Racer:
             self.looking_for_team = True if newdata['lookingForTeam'] == 1 else False
 class Team:
     def __init__(self, team):
+        self.requests = idk()
+        def get(*args, **kwargs):
+            return self.requests.get(headers=self.requests.headers, *args, **kwargs)
         try:
             def api_get(path): return get(f'https://www.nitrotype.com/api/{path}')
             self.data = json.loads(api_get(f'teams/{team}').content)

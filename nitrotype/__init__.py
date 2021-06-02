@@ -464,8 +464,10 @@ countries = {
 
 
 class Racer:
-    def __init__(self, racer=None):
+    def __init__(self, racer=None, scraper=None):
         self.requests = idk()
+        if scraper:
+            self.requests = scraper
         def get(*args, **kwargs):
             return self.requests.get(headers=self.requests.headers, *args, **kwargs)
         if racer == None:
@@ -600,6 +602,8 @@ class Racer:
 class Team:
     def __init__(self, team):
         self.requests = idk()
+        if scraper:
+            self.requests = scraper
         def get(*args, **kwargs):
             return self.requests.get(headers=self.requests.headers, *args, **kwargs)
         try:
