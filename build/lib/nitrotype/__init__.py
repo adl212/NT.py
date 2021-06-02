@@ -1,6 +1,9 @@
-from requests import get
 import re, json
 from datetime import date
+from .https import idk
+requests = idk()
+def get(*args, **kwargs):
+    return requests.get(headers=requests.headers, *args, **kwargs)
 #cars of nitrotype
 cars = {
     1 : 'Lamborgotti Mephisto SS',
@@ -493,7 +496,7 @@ class Racer:
             for elem in newdata['cars']:
                 if elem[1] == 'owned':
                     self.carIDs.append(elem[0])
-
+            self.newdata = newdata
             self.username = newdata['username'].title()
 
             display_name = newdata['displayName'] or self.username
@@ -513,13 +516,12 @@ class Racer:
                 self.car = f'https://www.nitrotype.com/cars/{newdata["carID"]}_large_1.png'
             else:
                 self.car = f'https://www.nitrotype.com/cars/painted/{newdata["carID"]}_large_1_{newdata["carHueAngle"]}.png'
-            
             self.level = (newdata['level'])
             self.experience = (newdata['experience'])
             self.points = (newdata['achievementPoints'])
             self.country = countries.get(newdata['country'], 'Unknown')
             if self.country != 'Unknown':
-                self.country += f' :flag_{newdata["country"].lower()}: '
+                self.country += f'{newdata["country"].lower()}'
             self.views = (newdata['profileViews'])
             self.created = date.fromtimestamp(newdata['createdStamp']).strftime('%d %B %Y')
 
@@ -634,10 +636,4 @@ class Team:
             for elem in self.data['members']:
                 if elem['role'] == "officer" and elem['username'] != self.captain[0]:
                     self.leaders.append((elem['username'], elem['displayName']))
-            self.embed_title = self.info["displayName"]
-            if self.embed_title.endswith('s'):
-                self.embed_title += "'"
-            else:
-                self.embed_title += "'s"
-            self.embed_title += ' Team'
             self.tag_and_name = f'[ [{self.info["tag"].upper()}] {self.info["name"]} ](https://www.nitrotype.com/team/{self.info["tag"].upper()})'

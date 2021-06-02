@@ -5,14 +5,16 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="NT.py",
-    version="1.0.1",
+    version="3.5.1",
     author="adl212",
     author_email="emailforpythoncoding@gmail.com",
     description="A package to use the nitrotype api and get player or team stats",
     long_description=long_description, # don't touch this, this is your README.md
     long_description_content_type="text/markdown",
     url="https://github.com/adl212/NT.py",
-    packages=setuptools.find_packages(),
+    packages=['nitrotype'],
+    data_files=['nitrotype/browsers.json'],
+    include_package_data = True,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
