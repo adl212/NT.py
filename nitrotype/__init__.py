@@ -600,7 +600,7 @@ class Racer:
             self.friend_reqs_allowed = True if newdata['allowFriendRequests'] == 1 else False
             self.looking_for_team = True if newdata['lookingForTeam'] == 1 else False
 class Team:
-    def __init__(self, team):
+    def __init__(self, team, scraper=None):
         self.requests = idk()
         if scraper:
             self.requests = scraper

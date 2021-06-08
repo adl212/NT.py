@@ -464,8 +464,10 @@ countries = {
 
 
 class Racer:
-    def __init__(self, racer=None):
+    def __init__(self, racer=None, scraper=None):
         self.requests = idk()
+        if scraper:
+            self.requests = scraper
         def get(*args, **kwargs):
             return self.requests.get(headers=self.requests.headers, *args, **kwargs)
         if racer == None:
@@ -598,8 +600,10 @@ class Racer:
             self.friend_reqs_allowed = True if newdata['allowFriendRequests'] == 1 else False
             self.looking_for_team = True if newdata['lookingForTeam'] == 1 else False
 class Team:
-    def __init__(self, team):
+    def __init__(self, team, scraper=None):
         self.requests = idk()
+        if scraper:
+            self.requests = scraper
         def get(*args, **kwargs):
             return self.requests.get(headers=self.requests.headers, *args, **kwargs)
         try:
