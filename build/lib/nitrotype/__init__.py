@@ -1,7 +1,7 @@
-import re, json
+import re, json, os
 from datetime import date
 import cloudscraper, jsonpickle, random
-with open('nitrotype/scrapers.json') as f:
+with open(os.path.join(os.path.dirname(__file__), 'scrapers.json')) as f:
     scrapers = json.load(f)['scrapers']
 #cars of nitrotype
 cars = {
