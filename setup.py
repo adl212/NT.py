@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="NT.py",
-    version="3.6.5",
+    version="4.0.0",
     author="adl212",
     author_email="emailforpythoncoding@gmail.com",
     description="A package to use the nitrotype api and get player or team stats",
@@ -13,8 +13,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/adl212/NT.py",
     packages=['nitrotype'],
-    data_files=['nitrotype/browsers.json'],
+    data_files=['nitrotype/scrapers.json'],
     include_package_data = True,
+    install_requires=['cloudscraper', 'jsonpickle'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

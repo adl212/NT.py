@@ -1,6 +1,8 @@
 import re, json
 from datetime import date
-from .https import idk
+import cloudscraper, jsonpickle, random
+with open('nitrotype/scrapers.json') as f:
+    scrapers = json.load(f)['scrapers']
 #cars of nitrotype
 cars = {
     1 : 'Lamborgotti Mephisto SS',
@@ -465,7 +467,7 @@ countries = {
 
 class Racer:
     def __init__(self, racer=None, scraper=None):
-        self.requests = idk()
+        self.requests = jsonpickle.decode(random.choice(scrapers))
         if scraper:
             self.requests = scraper
         def get(*args, **kwargs):
@@ -601,7 +603,7 @@ class Racer:
             self.looking_for_team = True if newdata['lookingForTeam'] == 1 else False
 class Team:
     def __init__(self, team, scraper=None):
-        self.requests = idk()
+        self.requests = jsonpickle.decode(random.choice(scrapers))
         if scraper:
             self.requests = scraper
         def get(*args, **kwargs):

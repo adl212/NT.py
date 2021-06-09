@@ -1,10 +1,11 @@
 LICENSE
 README.md
+pyproject.toml
 setup.py
 NT.py.egg-info/PKG-INFO
 NT.py.egg-info/SOURCES.txt
 NT.py.egg-info/dependency_links.txt
+NT.py.egg-info/requires.txt
 NT.py.egg-info/top_level.txt
 nitrotype/__init__.py
-nitrotype/browsers.json
-nitrotype/https.py
+nitrotype/scrapers.json
