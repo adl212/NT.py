@@ -674,52 +674,7 @@ class Team:
                 self.tag_and_name = f'[ [{self.info["tag"].upper()}] {self.info["name"]} ](https://www.nitrotype.com/team/{self.info["tag"].upper()})'
 
             except:
-                self.data = {
-                    "info": {
-                        "teamID": None,
-                        "userID": None,
-                        "tag": "",
-                        "tagColor": "",
-                        "name": "",
-                        "minLevel": 0,
-                        "minRaces": 0,
-                        "minSpeed": 0,
-                        "autoRemove": 0,
-                        "otherRequirements": "",
-                        "members": 0,
-                        "activePercent": 0,
-                        "searchable": 0,
-                        "enrollment": "closed",
-                        "profileViews": 0,
-                        "lastActivity": 0,
-                        "lastModified": 0,
-                        "createdStamp": 0,
-                        "username": "",
-                        "displayName": None
-                    }
-                }
-                self.info = {
-                    "teamID": None,
-                    "userID": None,
-                    "tag": "",
-                    "tagColor": "",
-                    "name": "",
-                    "minLevel": 0,
-                    "minRaces": 0,
-                    "minSpeed": 0,
-                    "autoRemove": 0,
-                    "otherRequirements": "",
-                    "members": 0,
-                    "activePercent": 0,
-                    "searchable": 0,
-                    "enrollment": "closed",
-                    "profileViews": 0,
-                    "lastActivity": 0,
-                    "lastModified": 0,
-                    "createdStamp": 0,
-                    "username": "",
-                    "displayName": None
-                }
+                
 
                 self.daily_pre = {}
                 self.daily_races = 0
