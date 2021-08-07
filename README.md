@@ -47,7 +47,6 @@ Here are the attributes of the Racer class:
 * `level` - Current level of racer
 * `experience` - Amount of XP achieved
 * `points` - Amount of achievement points achieved
-* `country` - Country of racer
 * `views` - Player profile views
 * `created` - Account creation time
 * `cars_owned` - Amount of cars owned
@@ -59,12 +58,6 @@ Here are the attributes of the Racer class:
 * `nitros_used` - Amount of nitros used by the Racer
 * `nitros_total` - Amount of nitros owned and used by the racer
 * `races` - Amount of races the racer has finished
-* `first` - Amount of races the racer placed first
-* `second` - Amount of races the racer placed second
-* `third` - Amount of races the racer placed third
-* `first_perc` - Percentage of races the racer placed first
-* `second_perc` - Percentage of races the racer placed second
-* `third_perc` - Percentage of races the racer placed third
 * `wpm_average` - The racer's current wpm average
 * `wpm_high` - The racer's current highest wpm
 *Note: These stats might return an error as the racer may have not raced in the last 24 hours, in the season, or in the entire length of their account*

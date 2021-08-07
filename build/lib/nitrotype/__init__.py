@@ -478,7 +478,7 @@ class Racer:
 
         newdata = {}
         newdata = json.loads('{"'+re.search(r'RACER_INFO: \{\"(.*)\}', get(f'https://www.nitrotype.com/racer/{racer}').text.strip()).group(1)+'}')
-        #print(newdata)
+        
         if newdata == {}:
             self.success = False
             return
@@ -522,10 +522,12 @@ class Racer:
                 self.car = f'https://www.nitrotype.com/cars/painted/{newdata["carID"]}_large_1_{newdata["carHueAngle"]}.png'
             self.level = (newdata['level'])
             self.experience = (newdata['experience'])
-            self.points = (newdata['achievementPoints'])
+            #self.points = (newdata['achievementPoints'])
+            '''
             self.country = countries.get(newdata['country'], 'Unknown')
             if self.country != 'Unknown':
                 self.country += f'{newdata["country"].lower()}'
+            '''
             self.views = (newdata['profileViews'])
             self.created = date.fromtimestamp(newdata['createdStamp']).strftime('%d %B %Y')
 
@@ -552,10 +554,10 @@ class Racer:
             self.nitros_total = (self.nitros_total)
 
             self.races = newdata['racesPlayed']
-            self.first = newdata['placed1']
+            '''self.first = newdata['placed1']
             self.second = newdata['placed2']
-            self.third = newdata['placed3']
-            try:
+            self.third = newdata['placed3']'''
+            '''try:
                 self.first_perc = round((self.first/self.races)*100, 2)
             except ZeroDivisionError:
                 self.first_perc = 0
@@ -566,11 +568,11 @@ class Racer:
             try:
                 self.third_perc = round((self.third/self.races)*100, 2)
             except ZeroDivisionError:
-                self.third_perc = 0
+                self.third_perc = 0'''
             self.races = (self.races)
-            self.first = (self.first)
+            '''self.first = (self.first)
             self.second = (self.second)
-            self.third = (self.third)
+            self.third = (self.third)'''
 
             self.wpm_average = (newdata['avgSpeed'])
             self.wpm_high = (newdata['highestSpeed'])
