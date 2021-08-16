@@ -483,10 +483,13 @@ class Racer:
             self.success = False
             return
 
-        if not newdata['tag']:
+        try:
+            if not newdata['tag']:
+                self.tag = ''
+            else:
+                self.tag = f"[{newdata['tag']}] "
+        except:
             self.tag = ''
-        else:
-            self.tag = f"[{newdata['tag']}] "
         self.userid = newdata['userID']
         '''
         userid = newdata['userID']

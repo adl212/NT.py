@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: NT.py
-Version: 4.1.1
+Version: 4.1.5
 Summary: A package to use the nitrotype api and get player or team stats
 Home-page: https://github.com/adl212/NT.py
 Author: adl212
@@ -55,7 +55,6 @@ Description: # NT.py
         * `level` - Current level of racer
         * `experience` - Amount of XP achieved
         * `points` - Amount of achievement points achieved
-        * `country` - Country of racer
         * `views` - Player profile views
         * `created` - Account creation time
         * `cars_owned` - Amount of cars owned
@@ -67,12 +66,6 @@ Description: # NT.py
         * `nitros_used` - Amount of nitros used by the Racer
         * `nitros_total` - Amount of nitros owned and used by the racer
         * `races` - Amount of races the racer has finished
-        * `first` - Amount of races the racer placed first
-        * `second` - Amount of races the racer placed second
-        * `third` - Amount of races the racer placed third
-        * `first_perc` - Percentage of races the racer placed first
-        * `second_perc` - Percentage of races the racer placed second
-        * `third_perc` - Percentage of races the racer placed third
         * `wpm_average` - The racer's current wpm average
         * `wpm_high` - The racer's current highest wpm
         *Note: These stats might return an error as the racer may have not raced in the last 24 hours, in the season, or in the entire length of their account*
