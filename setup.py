@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name="NT.py",
     version="4.1.5",
-    author="adl212",
+    authors="adl212, Malakai",
     author_email="emailforpythoncoding@gmail.com",
     description="A package to use the nitrotype api and get player or team stats",
     long_description=long_description, # don't touch this, this is your README.md
