@@ -13,9 +13,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/adl212/NT.py",
     packages=['nitrotype'],
-    data_files=['nitrotype/scrapers.json'],
     include_package_data = True,
-    install_requires=['cloudscraper', 'jsonpickle'],
+    install_requires=['cloudscraper'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
